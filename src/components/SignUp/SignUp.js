@@ -1,9 +1,12 @@
-import React, { useRef, useState } from "react";
+import React, { useContext, useRef, useState } from "react";
 import classes from "./signUp.module.css";
 import { useNavigate } from "react-router-dom";
-import Welcome from "../../pages/Welcome";
+
+import LoginContext from "../../store/LoginContext/login-context";
 
 const SignUp = () => {
+  const authCtx = useContext(LoginContext);
+
   const [isLogin, setIsLogin] = useState(false);
   const redirect = useNavigate();
 
@@ -19,6 +22,7 @@ const SignUp = () => {
     e.preventDefault();
 
     if (!isLogin) {
+      // signup component
       if (
         passwordEntered.current.value === confirmPasswordEntered.current.value
       ) {
@@ -49,15 +53,16 @@ const SignUp = () => {
             }
           })
           .then((data) => {
-            console.log(data);
+            authCtx.login(data.idToken, data.email);
+            redirect("/welcome");
           });
 
-        //reset input
         emailEntered.current.value = "";
         passwordEntered.current.value = "";
         confirmPasswordEntered.current.value = "";
-      } else return alert("Enter Password Correctly");
+      } else return alert("Password Does Not Match");
     } else {
+      // login component
       fetch(
         "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyC415gt6s-Bwh87A8Renvlz03AmmWUJqrw",
         {
@@ -74,8 +79,7 @@ const SignUp = () => {
       )
         .then((res) => {
           if (res.ok) {
-            // alert("Login Successful");
-            redirect("/welcome");
+            console.log("Login Successful from signup comp");
 
             return res.json();
           } else {
@@ -87,7 +91,8 @@ const SignUp = () => {
           }
         })
         .then((data) => {
-          console.log(data);
+          authCtx.login(data.idToken, data.email);
+          redirect("/welcome");
         });
 
       //reset input
