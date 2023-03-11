@@ -1,9 +1,11 @@
 import "./App.css";
+import SignUp from "./components/SignUp/SignUp";
 
 function App() {
   return (
-    <div>
+    <div className="app">
       <h1>Expense Tracker</h1>
+      <SignUp />
     </div>
   );
 }

@@ -1,0 +1,30 @@
+.signup_main_div {
+  width: fit-content;
+  border: 2px solid gray;
+  border-radius: 0.5rem;
+  position: relative;
+  top: 20vh;
+  left: 50vw;
+  transform: translateX(-50%);
+}
+
+h2 {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.signup_form_div {
+}
+
+.signup_form_elements {
+  margin: 0.5rem;
+  align-content: center;
+}
+.signup_form_label {
+  color: blue;
+  font-size: 1rem;
+}
+
+.signup_form_button {
+  background-color: blue;
+}
