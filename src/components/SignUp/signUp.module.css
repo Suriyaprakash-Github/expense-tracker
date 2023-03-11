@@ -1,8 +1,16 @@
+/* 
+#000000
+#14213d
+#fca311
+#e5e5e5
+#ffffff
+ */
+
 .signup_main_div {
   width: fit-content;
-  border: 2px solid gray;
+  border: 2px solid #e5e5e5;
   border-radius: 0.5rem;
-  position: relative;
+  position: absolute;
   top: 20vh;
   left: 50vw;
   transform: translateX(-50%);
@@ -10,21 +18,34 @@
 
 h2 {
   font-size: 1.5rem;
+  margin-bottom: 0;
   text-align: center;
 }
 
 .signup_form_div {
+  padding: 2rem;
 }
 
 .signup_form_elements {
-  margin: 0.5rem;
-  align-content: center;
+  margin: 1rem;
 }
 .signup_form_label {
-  color: blue;
+  color: black;
   font-size: 1rem;
 }
 
 .signup_form_button {
-  background-color: blue;
+  background-color: #14213d;
+  border: none;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  color: #fca311;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%);
+
+  margin-top: 0.5rem;
+}
+.signup_form_button:hover {
+  cursor: pointer;
 }
