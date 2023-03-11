@@ -3,8 +3,9 @@ import { Routes, Route } from "react-router-dom";
 
 import "./App.css";
 import SignUp from "./components/SignUp/SignUp";
-import UpdateProfile from "./components/Update/UpdateProfile";
+import Home from "./components/Home/Home";
 import Welcome from "./pages/Welcome";
+import UpdateProfile from "./components/Update/UpdateProfile";
 
 import LoginProvider from "./store/LoginContext/LoginProvider";
 
@@ -12,6 +13,9 @@ function App() {
   return (
     <>
       <div className="app">
+        <a href="/">
+          <button>Home</button>
+        </a>
         <LoginProvider>
           <Routes>
             <Route>
@@ -27,6 +31,9 @@ function App() {
                 exact
                 element={<UpdateProfile />}
               ></Route>
+              <Route>
+                <Route path="/" exact element={<Home />}></Route>
+              </Route>
             </Route>
           </Routes>
         </LoginProvider>

@@ -1,0 +1,150 @@
+/* Color scheme */
+:root {
+  --primary-color: #14213d; /* Dark blue */
+  --secondary-color: #fca311; /* Yellow */
+  --text-color: #444444; /* Dark gray */
+  --bg-color: #ffffff; /* White */
+}
+
+/* Header styles */
+.header {
+  background-color: var(--primary-color);
+  color: var(--bg-color);
+  font-size: inherit;
+}
+
+.header h1 {
+  font-size: 4rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+.header p {
+  font-size: 2rem;
+  text-align: center;
+}
+
+/* Button styles */
+.btn-primary {
+  background-color: var(--secondary-color);
+  color: var(--bg-color);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  font-size: 18px;
+  margin-top: 20px;
+  cursor: pointer;
+  position: relative;
+  left: 42.5%;
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--text-color);
+  border: none;
+  border-bottom: 2px solid var(--secondary-color);
+  font-size: 16px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+/* Feature styles */
+.features {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+.features h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.features li {
+  margin: 1rem;
+  padding: 1rem;
+  border: 0.05rem solid var(--primary-color);
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+/* How it works styles */
+.how-it-works {
+  background-color: var(--primary-color);
+  color: var(--bg-color);
+}
+
+.how-it-works h2 {
+  font-size: 3.6rem;
+  margin-bottom: 2rem;
+}
+
+.how-it-works ol {
+  list-style-position: inside;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
+
+.how-it-works li {
+  margin: 2rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+/* Testimonials styles */
+.testimonials {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+.testimonials h2 {
+  font-size: 3.6rem;
+  margin-bottom: 2rem;
+}
+
+.quote {
+  margin: 1rem;
+  padding: 1rem;
+  border: 0.05rem solid var(--primary-color);
+  border-radius: 4px;
+  font-size: 1rem;
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+.quote p:last-of-type {
+  text-align: right;
+  margin-top: 10px;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+  .header h1 {
+    font-size: 36px;
+  }
+
+  .subheading {
+    font-size: 1rem;
+  }
+
+  .btn-primary {
+    font-size: 16px;
+  }
+
+  .features li {
+    font-size: 16px;
+    margin: 10px;
+    padding: 5px;
+  }
+
+  .how-it-works li {
+    font-size: 16px;
+  }
+
+  .quote {
+    font-size: 16px;
+    margin: 10px;
+    padding: 10px;
+  }
+}
