@@ -15,6 +15,12 @@ function App() {
       <div className="app">
         <a href="/">
           <button>Home</button>
+        </a>{" "}
+        <a href="/signup">
+          <button>Signup</button>
+        </a>{" "}
+        <a href="/welcome">
+          <button>Welcome </button>
         </a>
         <LoginProvider>
           <Routes>
