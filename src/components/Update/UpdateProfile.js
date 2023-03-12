@@ -71,6 +71,8 @@ const UpdateProfile = () => {
     .then((data) => {
       setFetchedName(data.users[0].displayName);
     });
+
+  console.log(authCtx.verified);
   return (
     <>
       <h1>Update Your Profile </h1>

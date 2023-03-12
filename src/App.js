@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Routes, Route } from "react-router-dom";
 
 import "./App.css";
@@ -7,39 +7,50 @@ import Home from "./components/Home/Home";
 import Welcome from "./pages/Welcome";
 import UpdateProfile from "./components/Update/UpdateProfile";
 
-import LoginProvider from "./store/LoginContext/LoginProvider";
 import Verify from "./components/Verification/Verify";
+import LoginContext from "./store/LoginContext/login-context";
 
 function App() {
+  const authCtx = useContext(LoginContext);
+  const logoutHandler = () => {
+    authCtx.logout();
+  };
+
   return (
     <>
       <div className="app">
         <a href="/">
           <button>Home</button>
         </a>
-        <a href="/signup">
-          <button>Signup</button>
-        </a>
+        {authCtx.isLoggedIn ? (
+          <a href="/">
+            <button onClick={logoutHandler}>Logout</button>
+          </a>
+        ) : (
+          <a href="/signup">
+            <button>Signup</button>
+          </a>
+        )}
+
         <a href="/welcome">
           <button>Welcome </button>
         </a>
-        <LoginProvider>
-          <Routes>
-            <Route path="/welcome" exact element={<Welcome />}></Route>
 
-            <Route path="/signup" exact element={<SignUp />}></Route>
+        <Routes>
+          <Route path="/welcome" exact element={<Welcome />}></Route>
 
-            <Route
-              path="/updateprofile"
-              exact
-              element={<UpdateProfile />}
-            ></Route>
+          <Route path="/signup" exact element={<SignUp />}></Route>
 
-            <Route path="/verify" exact element={<Verify />}></Route>
+          <Route
+            path="/updateprofile"
+            exact
+            element={<UpdateProfile />}
+          ></Route>
 
-            <Route path="/" exact element={<Home />}></Route>
-          </Routes>
-        </LoginProvider>
+          <Route path="/verify" exact element={<Verify />}></Route>
+
+          <Route path="/" exact element={<Home />}></Route>
+        </Routes>
       </div>
     </>
   );
