@@ -4,6 +4,7 @@ const LoginContext = React.createContext({
   token: "",
   isLoggedIn: false,
   email: "",
+  verified: false,
   login: (token) => {},
   logout: () => {},
 });

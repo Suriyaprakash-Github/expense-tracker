@@ -7,6 +7,7 @@ const LoginProvider = (props) => {
 
   const [token, setToken] = useState(initialToken);
   const [email, setEmail] = useState(initialEmail);
+  // const [verified,setVerified]=useState(false)
   const userIsLoggedIn = !!token;
 
   const loginHandler = (token, email) => {
@@ -27,6 +28,7 @@ const LoginProvider = (props) => {
     token: token,
     isLoggedIn: userIsLoggedIn,
     email: email,
+    verified: false,
     login: loginHandler,
     logout: logoutHandler,
   };
