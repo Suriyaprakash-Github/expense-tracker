@@ -84,8 +84,8 @@ const SignUp = () => {
             return res.json();
           } else {
             return res.json().then((data) => {
-              let errorMessage = "Authentication failed!";
-
+              let errorMessage = data.error.message;
+              alert(errorMessage);
               throw new Error(errorMessage);
             });
           }
@@ -171,6 +171,11 @@ const SignUp = () => {
             First time Here?
           </button>
         )}
+        <a href="/reset">
+          <button className={classes.signup_form_button}>
+            Forgot Password?
+          </button>
+        </a>
       </div>
     </>
   );

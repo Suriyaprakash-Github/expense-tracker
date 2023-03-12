@@ -6,6 +6,7 @@ import SignUp from "./components/SignUp/SignUp";
 import Home from "./components/Home/Home";
 import Welcome from "./pages/Welcome";
 import UpdateProfile from "./components/Update/UpdateProfile";
+import PasswordReset from "./components/PasswordReset/passwordReset";
 
 import Verify from "./components/Verification/Verify";
 import LoginContext from "./store/LoginContext/login-context";
@@ -48,6 +49,7 @@ function App() {
           ></Route>
 
           <Route path="/verify" exact element={<Verify />}></Route>
+          <Route path="/reset" exact element={<PasswordReset />}></Route>
 
           <Route path="/" exact element={<Home />}></Route>
         </Routes>
