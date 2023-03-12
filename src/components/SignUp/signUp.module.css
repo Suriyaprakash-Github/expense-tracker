@@ -6,46 +6,54 @@
 #ffffff
  */
 
-.signup_main_div {
-  width: fit-content;
+.signup_container {
   border: 2px solid #e5e5e5;
-  border-radius: 0.5rem;
   position: absolute;
-  top: 20vh;
-  left: 50vw;
-  transform: translateX(-50%);
+  left: 50%;
+  translate: -50% 35%;
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+.form_container h2 {
+  font-size: 1.5rem;
+  text-align: center;
+  margin-top: 0;
+}
+.signup_form_div button {
+  position: relative;
+  left: 50%;
+  translate: -50%;
+}
+.form_container .form_button {
+  display: flex;
+  justify-content: center;
 }
 
-h2 {
-  font-size: 1.5rem;
-  margin-bottom: 0;
-  text-align: center;
+.form_container .form_button button {
+  margin: 0 1rem 0 1rem;
+}
+
+.form_container a {
+  text-decoration: none;
 }
 
 .signup_form_div {
-  padding: 2rem;
+  margin: 2rem;
 }
 
 .signup_form_elements {
   margin: 1rem;
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
 }
-.signup_form_label {
-  color: black;
+.signup_form_elements label {
   font-size: 1rem;
 }
-
-.signup_form_button {
-  background-color: #14213d;
-  border: none;
-  padding: 1rem;
-  border-radius: 0.5rem;
-  color: #fca311;
-  position: relative;
-  left: 50%;
-  transform: translate(-50%);
-
-  margin-top: 0.5rem;
+.signup_form_elements input {
+  border: 1px solid e5e5e5;
 }
-.signup_form_button:hover {
+
+button:hover {
   cursor: pointer;
 }

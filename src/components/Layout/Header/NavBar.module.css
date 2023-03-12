@@ -1,0 +1,26 @@
+/* 
+#000000
+#14213d
+#fca311
+#e5e5e5
+#ffffff
+ */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  background-color: #14213d;
+  border-radius: 0.2rem;
+}
+
+.navbar_div {
+  justify-content: space-between;
+  padding: 0.5rem;
+}
+
+.navbar_links {
+  font-size: 1rem;
+  text-decoration: none;
+  color: #fca311;
+  padding: 0 0.5rem 0 0.5rem;
+}

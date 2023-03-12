@@ -7,7 +7,7 @@ import LoginContext from "../../store/LoginContext/login-context";
 const SignUp = () => {
   const authCtx = useContext(LoginContext);
 
-  const [isLogin, setIsLogin] = useState(false);
+  const [isSignedUp, setIsSignedUp] = useState(false);
   const redirect = useNavigate();
 
   const emailEntered = useRef();
@@ -15,13 +15,13 @@ const SignUp = () => {
   const confirmPasswordEntered = useRef();
 
   const loginSwitch = () => {
-    setIsLogin((prev) => !prev);
+    setIsSignedUp((prev) => !prev);
   };
 
   const submitHandler = (e) => {
     e.preventDefault();
 
-    if (!isLogin) {
+    if (!isSignedUp) {
       // signup component
       if (
         passwordEntered.current.value === confirmPasswordEntered.current.value
@@ -103,14 +103,12 @@ const SignUp = () => {
 
   return (
     <>
-      <div className={classes.signup_main_div}>
-        {!isLogin ? <h2>Sign Up</h2> : <h2>Login</h2>}
-        <div>
+      <div className={classes.signup_container}>
+        <div className={classes.form_container}>
+          {!isSignedUp ? <h2>Sign Up</h2> : <h2>Login</h2>}
           <form onSubmit={submitHandler} className={classes.signup_form_div}>
             <div className={classes.signup_form_elements}>
-              <label className={classes.signup_form_label} htmlFor="email">
-                Email:
-              </label>
+              <label htmlFor="email">Email:</label>
               <input
                 type="email"
                 id="email"
@@ -121,9 +119,7 @@ const SignUp = () => {
             </div>
 
             <div className={classes.signup_form_elements}>
-              <label htmlFor="password" className={classes.signup_form_label}>
-                Password:
-              </label>
+              <label htmlFor="password">Password:</label>
               <input
                 type="password"
                 id="password"
@@ -133,14 +129,9 @@ const SignUp = () => {
                 required
               />
             </div>
-            {!isLogin && (
+            {!isSignedUp && (
               <div className={classes.signup_form_elements}>
-                <label
-                  htmlFor="confirm_password"
-                  className={classes.signup_form_label}
-                >
-                  Confirm Password:
-                </label>
+                <label htmlFor="confirm_password">Confirm Password:</label>
                 <input
                   type="password"
                   id="confirm_password"
@@ -150,32 +141,43 @@ const SignUp = () => {
                 />
               </div>
             )}
-            {!isLogin ? (
-              <button type="submit" className={classes.signup_form_button}>
+            {!isSignedUp ? (
+              <button type="submit" className={classes.inside_button}>
                 Sign Up
               </button>
             ) : (
-              <button type="submit" className={classes.signup_form_button}>
+              <button type="submit" className={classes.inside_button}>
                 Login
               </button>
             )}
           </form>
+          <div className={classes.form_button}>
+            {!isSignedUp && (
+              <button
+                onClick={loginSwitch}
+                className={classes.signup_form_button}
+              >
+                Already Have an Account?
+              </button>
+            )}
+            {isSignedUp && (
+              <>
+                <button
+                  onClick={loginSwitch}
+                  className={classes.signup_form_button}
+                >
+                  First time Here?
+                </button>
+
+                <a href="/reset">
+                  <button className={classes.signup_form_button}>
+                    Forgot Password?
+                  </button>
+                </a>
+              </>
+            )}
+          </div>
         </div>
-        {!isLogin && (
-          <button onClick={loginSwitch} className={classes.signup_form_button}>
-            Already Have an Account?
-          </button>
-        )}
-        {isLogin && (
-          <button onClick={loginSwitch} className={classes.signup_form_button}>
-            First time Here?
-          </button>
-        )}
-        <a href="/reset">
-          <button className={classes.signup_form_button}>
-            Forgot Password?
-          </button>
-        </a>
       </div>
     </>
   );

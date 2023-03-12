@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Welcome = () => {
+const Profile = () => {
   return (
     <>
       <h1>Welcome to Expense Tracker</h1>
@@ -10,4 +10,4 @@ const Welcome = () => {
     </>
   );
 };
-export default Welcome;
+export default Profile;
