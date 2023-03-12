@@ -6,7 +6,7 @@ import SignUp from "./components/SignUp/SignUp";
 import Home from "./components/Home/Home";
 import Profile from "./pages/Profile";
 import UpdateProfile from "./components/Update/UpdateProfile";
-import PasswordReset from "./components/PasswordReset/passwordReset";
+import PasswordReset from "./components/PasswordReset/PasswordReset";
 
 import Verify from "./components/Verification/Verify";
 import NavBar from "./components/Layout/Header/NavBar";
