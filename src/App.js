@@ -1,6 +1,8 @@
 import React, { useContext } from "react";
 import { Routes, Route } from "react-router-dom";
 
+import LoginContext from "./store/LoginContext/login-context";
+
 import "./App.css";
 import SignUp from "./components/SignUp/SignUp";
 import Home from "./components/Home/Home";
@@ -10,17 +12,25 @@ import PasswordReset from "./components/PasswordReset/PasswordReset";
 
 import Verify from "./components/Verification/Verify";
 import NavBar from "./components/Layout/Header/NavBar";
+import MyExpense from "./pages/MyExpense";
 
 function App() {
+  const authCtx = useContext(LoginContext);
   return (
     <>
       <div className="app">
         <NavBar />
 
         <Routes>
-          <Route path="/profile" exact element={<Profile />} />
+          {authCtx.isLoggedIn ? (
+            <Route path="/profile" exact element={<Profile />} />
+          ) : (
+            <Route path="/profile" exact element={<SignUp />} />
+          )}
+
           <Route path="/signup" exact element={<SignUp />} />
           <Route path="/updateprofile" exact element={<UpdateProfile />} />
+          <Route path="/myexpense" exact element={<MyExpense />} />
           <Route path="/verify" exact element={<Verify />} />
           <Route path="/reset" exact element={<PasswordReset />} />
           <Route path="/" exact element={<Home />} />

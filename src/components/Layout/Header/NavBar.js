@@ -25,7 +25,7 @@ const NavBar = () => {
           </NavLink>
           {authCtx.isLoggedIn ? (
             <>
-              <NavLink to="/" className={classes.navbar_links}>
+              <NavLink to="/myexpense" className={classes.navbar_links}>
                 My Expenses
               </NavLink>
               <NavLink to="/profile" className={classes.navbar_links}>
