@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import IncomeContext from "../../../store/ExpenseContext/Income/income-context";
 import classes from "./IncomeItem.module.css";
 import trashImage from "../../../assets/trash.png";
+import editImage from "../../../assets/edit.png";
 
 const IncomeItems = (props) => {
   const incomeCtx = useContext(IncomeContext);
@@ -12,10 +13,17 @@ const IncomeItems = (props) => {
   } else incomeDetails = "your Income Details";
 
   const deleteHandler = (income) => {
-    incomeCtx.removeIncome(income);
+    if (window.confirm("Are You Sure?!")) {
+      incomeCtx.removeIncome(income);
+    }
   };
 
-  console.log(incomeCtx.incomes);
+  const editHandler = (income) => {
+    console.log("edit clicked");
+    if (window.confirm("Are You Sure?")) {
+    }
+  };
+
   const incomes = incomeCtx.incomes.map((income) => {
     return (
       <div key={Math.random()} className={classes.showIncome}>
@@ -24,6 +32,11 @@ const IncomeItems = (props) => {
           <img
             src={trashImage}
             onClick={() => deleteHandler(income)}
+            alt="delete"
+          />
+          <img
+            src={editImage}
+            onClick={() => editHandler(income)}
             alt="delete"
           />
         </p>
