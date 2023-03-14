@@ -1,6 +1,17 @@
+/* 
+#000000
+#14213d
+#fca311
+#e5e5e5
+#ffffff
+ */
+
 .app {
   box-sizing: border-box;
   font-size: 10px;
+}
+* {
+  font-family: "Segoe UI", sans-serif;
 }
 button {
   background-color: #14213d;
@@ -8,4 +19,9 @@ button {
   padding: 0.5rem;
   border: none;
   border-radius: 0.4rem;
+}
+
+label {
+  font-size: 1rem;
+  padding: 0.5rem;
 }

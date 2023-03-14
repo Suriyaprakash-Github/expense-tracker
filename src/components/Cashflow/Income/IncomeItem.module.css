@@ -1,0 +1,53 @@
+.mainIncomeDiv {
+  background-color: #14213d;
+  border-radius: 0.4rem;
+  padding: 0.5rem;
+}
+.mainIncomeDiv h2 {
+  text-transform: uppercase;
+  color: white;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.mainIncomeDiv p {
+  color: white;
+  font-size: 1rem;
+  text-align: right;
+}
+
+.showIncome {
+  display: inline-flex;
+  flex-direction: column;
+  background-color: #b5e48c;
+  width: fit-content;
+  border-radius: 0.4rem;
+  margin: 0.5rem;
+  padding: 0.5rem;
+  flex-wrap: nowrap;
+}
+
+.showIncome img {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+.showIncome img:hover {
+  cursor: pointer;
+}
+.showIncome p {
+  margin: 0.3rem;
+  text-align: left;
+  padding: 0.3rem;
+  font-size: 1rem;
+  color: black;
+  border-radius: 0.4rem;
+  word-wrap: break-word;
+}
+
+.showIncome p:first-child {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

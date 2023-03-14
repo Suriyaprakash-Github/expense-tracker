@@ -31,13 +31,13 @@ const NavBar = () => {
               <NavLink to="/profile" className={classes.navbar_links}>
                 Profile
               </NavLink>
-              <NavLink
-                to="/"
+              <a
+                href="/"
                 className={classes.navbar_links}
                 onClick={logoutHandler}
               >
                 Logout
-              </NavLink>
+              </a>
             </>
           ) : (
             <NavLink to="/signup" className={classes.navbar_links}>

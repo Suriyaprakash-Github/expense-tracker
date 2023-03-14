@@ -5,6 +5,7 @@ const Income = (props) => {
   const incomeCtx = useContext(IncomeContext);
   const enteredIncome = useRef();
   const enteredIncomeAmount = useRef();
+  const enteredDescription = useRef();
 
   const addIncomeHandler = (e) => {
     e.preventDefault();
@@ -12,9 +13,11 @@ const Income = (props) => {
       id: Math.random(),
       title: enteredIncome.current.value,
       income: enteredIncomeAmount.current.value,
+      description: enteredDescription.current.value,
     });
     enteredIncome.current.value = "";
     enteredIncomeAmount.current.value = "";
+    enteredDescription.current.value = "";
   };
 
   return (
@@ -22,16 +25,18 @@ const Income = (props) => {
       <h1>Add Incomes</h1>
 
       <form onSubmit={addIncomeHandler}>
-        <label htmlFor="income">Enter Your Income</label>
+        <label htmlFor="income">Income Category: </label>
         <input type="text" id="income" ref={enteredIncome} required />
 
-        <label htmlFor="incomeAmount">Enter Your Income Amount</label>
+        <label htmlFor="incomeAmount">Income Amount: </label>
         <input
           type="text"
           id="incomeAmount"
           ref={enteredIncomeAmount}
           required
         />
+        <label htmlFor="description">Description: </label>
+        <input type="text" id="description" ref={enteredDescription} />
         <button type="submit"> Add Income </button>
       </form>
     </>
