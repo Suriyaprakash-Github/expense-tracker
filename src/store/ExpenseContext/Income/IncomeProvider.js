@@ -1,5 +1,6 @@
 import React, { useReducer } from "react";
 import IncomeContext from "./income-context";
+import axios from "axios";
 
 const defaultIncomeState = {
   incomes: [],
@@ -12,6 +13,22 @@ const incomeReducer = (state, action) => {
     let updatedTotalIncome;
     updatedIncomes = state.incomes.concat(action.income);
     updatedTotalIncome = state.totalIncome + Number(action.income.income);
+
+    axios
+      .put(
+        "https://expensetracker-1d431-default-rtdb.firebaseio.com/income.json",
+        {
+          updatedIncomes,
+        }
+      )
+      .then((res) => {
+        console.log(res);
+        console.log(res.data.updatedIncomes);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+
     return {
       incomes: updatedIncomes,
       totalIncome: updatedTotalIncome,
@@ -26,6 +43,18 @@ const incomeReducer = (state, action) => {
     state.incomes.splice(toRemove, 1);
     updatedIncomes = [...state.incomes];
     updatedTotalIncome = state.totalIncome - Number(action.income.income);
+
+    axios
+      .put(
+        "https://expensetracker-1d431-default-rtdb.firebaseio.com/income.json",
+        {
+          updatedIncomes,
+        }
+      )
+      .catch((error) => {
+        console.log(error);
+      });
+
     return {
       incomes: updatedIncomes,
       totalIncome: updatedTotalIncome,
