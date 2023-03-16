@@ -60,6 +60,19 @@ const incomeReducer = (state, action) => {
       totalIncome: updatedTotalIncome,
     };
   }
+
+  if (action.type === "RECEIVED") {
+    let updatedIncomes;
+    let updatedTotalIncome;
+    // console.log(action.income);
+    updatedIncomes = state.incomes.concat(action.income);
+    updatedTotalIncome = state.totalIncome + Number(action.income.income);
+
+    return {
+      incomes: updatedIncomes,
+      totalIncome: updatedTotalIncome,
+    };
+  }
   return defaultIncomeState;
 };
 const IncomeProvider = (props) => {
@@ -76,11 +89,16 @@ const IncomeProvider = (props) => {
     dispatchIncomeAction({ type: "REMOVE", income: income });
   };
 
+  const incomeStoredHandler = (income) => {
+    dispatchIncomeAction({ type: "RECEIVED", income: income });
+  };
+
   const incomeValue = {
     incomes: incomeState.incomes,
     totalIncome: incomeState.totalIncome,
     addIncome: addItemToIncomeHandler,
     removeIncome: removeItemFromIncomeHandler,
+    incomeStored: incomeStoredHandler,
   };
 
   return (

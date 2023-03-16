@@ -5,6 +5,7 @@ const IncomeContext = React.createContext({
   totalIncome: 0,
   addIncome: (income) => {},
   removeIncome: (id) => {},
+  incomeStored: (item) => {},
 });
 
 export default IncomeContext;

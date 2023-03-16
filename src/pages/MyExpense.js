@@ -12,6 +12,7 @@ const MyExpense = () => {
   //   return exp.title === "Savings";
   // });
   // console.log("array", indexNeeded);
+
   return (
     <>
       <div className={classes.expInc_container}>
