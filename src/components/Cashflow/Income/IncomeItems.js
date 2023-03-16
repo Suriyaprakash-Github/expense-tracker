@@ -3,9 +3,11 @@ import IncomeContext from "../../../store/ExpenseContext/Income/income-context";
 import classes from "./IncomeItem.module.css";
 import trashImage from "../../../assets/trash.png";
 import editImage from "../../../assets/edit.png";
+import { useNavigate } from "react-router-dom";
 
 const IncomeItems = (props) => {
   const incomeCtx = useContext(IncomeContext);
+  const history = useNavigate();
 
   let incomeDetails = "";
   if (incomeCtx.incomes.length === 0) {
@@ -19,8 +21,10 @@ const IncomeItems = (props) => {
   };
 
   const editHandler = (income) => {
-    console.log("edit clicked");
+    let incomeToEdit = income;
     if (window.confirm("Are You Sure?")) {
+      incomeCtx.editIncome(incomeToEdit);
+      history("/editIncome");
     }
   };
 

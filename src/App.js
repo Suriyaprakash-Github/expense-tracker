@@ -14,6 +14,7 @@ import Verify from "./components/Verification/Verify";
 import NavBar from "./components/Layout/Header/NavBar";
 import MyExpense from "./pages/MyExpense";
 import StoredExpenses from "./components/Cashflow/StoredExpenses";
+import EditIncome from "./components/Cashflow/Income/EditIncome";
 
 function App() {
   const authCtx = useContext(LoginContext);
@@ -31,9 +32,11 @@ function App() {
 
           <Route path="/signup" exact element={<SignUp />} />
           <Route path="/updateprofile" exact element={<UpdateProfile />} />
+          <Route path="/editIncome" exact element={<EditIncome />} />
           <Route path="/myexpense" exact element={<MyExpense />} />
           <Route path="/verify" exact element={<Verify />} />
           <Route path="/reset" exact element={<PasswordReset />} />
+
           <Route path="/" exact element={<Home />} />
         </Routes>
       </div>

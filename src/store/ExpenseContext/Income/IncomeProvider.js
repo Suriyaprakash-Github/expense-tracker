@@ -5,6 +5,7 @@ import axios from "axios";
 const defaultIncomeState = {
   incomes: [],
   totalIncome: 0,
+  editArray: [],
 };
 
 const incomeReducer = (state, action) => {
@@ -32,6 +33,7 @@ const incomeReducer = (state, action) => {
     return {
       incomes: updatedIncomes,
       totalIncome: updatedTotalIncome,
+      editIncome: state.editIncome,
     };
   }
   if (action.type === "REMOVE") {
@@ -58,6 +60,7 @@ const incomeReducer = (state, action) => {
     return {
       incomes: updatedIncomes,
       totalIncome: updatedTotalIncome,
+      editIncome: state.editIncome,
     };
   }
 
@@ -71,10 +74,24 @@ const incomeReducer = (state, action) => {
     return {
       incomes: updatedIncomes,
       totalIncome: updatedTotalIncome,
+      editIncome: state.editIncome,
+    };
+  }
+
+  if (action.type === "EDIT") {
+    let newEditIncome = action.income;
+    console.log("from provider", newEditIncome);
+
+    return {
+      incomes: state.incomes,
+      totalIncome: state.totalIncome,
+      editArray: newEditIncome,
     };
   }
   return defaultIncomeState;
 };
+
+// Provider
 const IncomeProvider = (props) => {
   const [incomeState, dispatchIncomeAction] = useReducer(
     incomeReducer,
@@ -93,12 +110,18 @@ const IncomeProvider = (props) => {
     dispatchIncomeAction({ type: "RECEIVED", income: income });
   };
 
+  const editIncomeHandler = (income) => {
+    dispatchIncomeAction({ type: "EDIT", income: income });
+  };
+
   const incomeValue = {
     incomes: incomeState.incomes,
     totalIncome: incomeState.totalIncome,
+    editArray: incomeState.editArray,
     addIncome: addItemToIncomeHandler,
     removeIncome: removeItemFromIncomeHandler,
     incomeStored: incomeStoredHandler,
+    editIncome: editIncomeHandler,
   };
 
   return (
