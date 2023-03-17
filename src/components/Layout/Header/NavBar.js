@@ -18,8 +18,6 @@ const NavBar = () => {
           <NavLink to="/" className={classes.navbar_links}>
             Expense Tracker
           </NavLink>
-        </div>
-        <div className={classes.navbar_div}>
           <NavLink to="/" className={classes.navbar_links}>
             Home
           </NavLink>
@@ -41,7 +39,7 @@ const NavBar = () => {
             </>
           ) : (
             <NavLink to="/signup" className={classes.navbar_links}>
-              Sign Up
+              Create an account
             </NavLink>
           )}
         </div>

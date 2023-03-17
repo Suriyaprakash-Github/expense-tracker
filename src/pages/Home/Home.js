@@ -1,6 +1,5 @@
 import React from "react";
 import classes from "./Home.module.css";
-import Button from "@mui/material/Button";
 
 function Home() {
   return (
@@ -11,7 +10,7 @@ function Home() {
           Simplify your finances with our expense tracker web app
         </p>
         <a href="/signup">
-          <Button className="btn-primary">Get Started for Free</Button>
+          <button className="btn-primary">Get Started for Free</button>
         </a>
       </header>
 
@@ -39,7 +38,7 @@ function Home() {
           </li>
         </ol>
         <a href="/signup">
-          <Button className="btn-primary">Sign up for free</Button>
+          <button className="btn-primary">Sign up for free</button>
         </a>
       </section>
 
@@ -69,7 +68,7 @@ function Home() {
           <p>- Bob Johnson</p>
         </div>
         <a href="/signup">
-          <Button className="btn-primary">Sign up for free</Button>
+          <button className="btn-primary">Sign up for free</button>
         </a>
       </section>
     </div>
