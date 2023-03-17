@@ -1,0 +1,98 @@
+.header {
+  background-color: #222b5f;
+  display: flex;
+  flex-direction: column;
+}
+.header h1 {
+  color: white;
+  font-size: 2rem;
+}
+.header p {
+  color: #cacaca;
+  margin-top: 0;
+  font-size: 1rem;
+}
+.header a {
+  text-decoration: none;
+  display: flex;
+  width: fit-content;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+.header button {
+  background-color: #07a0e7;
+  color: white;
+}
+.header button:hover {
+  background-color: #faea06;
+  color: black;
+}
+
+.features h2 {
+  font-size: 1.5rem;
+}
+.features ul li {
+  font-size: 1rem;
+  list-style-type: square;
+}
+
+.how_it_works h2 {
+  font-size: 1.5rem;
+}
+
+.how_it_works ol li {
+  font-size: 1rem;
+  list-style-type: square;
+}
+
+.how_it_works a {
+  text-decoration: none;
+  display: inherit;
+  width: fit-content;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+.how_it_works button {
+  background-color: #07a0e7;
+  color: white;
+}
+.how_it_works button:hover {
+  background-color: #faea06;
+  color: black;
+}
+
+.testimonials h2 {
+  font-size: 1.5rem;
+}
+
+.testimonials div {
+  border: 1px solid gray;
+  border-radius: 0.4rem;
+  margin: 0.5rem;
+}
+
+.testimonials div p {
+  font-size: 1rem;
+}
+
+.testimonials a {
+  text-decoration: none;
+  display: inherit;
+  width: fit-content;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+.testimonials button {
+  background-color: #07a0e7;
+  color: white;
+}
+.testimonials button:hover {
+  background-color: #faea06;
+  color: black;
+}

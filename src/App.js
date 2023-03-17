@@ -5,7 +5,7 @@ import LoginContext from "./store/LoginContext/login-context";
 
 import "./App.css";
 import SignUp from "./components/SignUp/SignUp";
-import Home from "./components/Home/Home";
+import Home from "./pages/Home/Home";
 import Profile from "./pages/Profile";
 import UpdateProfile from "./components/Update/UpdateProfile";
 import PasswordReset from "./components/PasswordReset/PasswordReset";

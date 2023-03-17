@@ -1,33 +1,34 @@
 import React from "react";
-import "./styles.css";
+import classes from "./Home.module.css";
+import Button from "@mui/material/Button";
 
-function HouseholdExpenseTracker() {
+function Home() {
   return (
     <div className="container">
-      <header className="header">
+      <header className={classes.header}>
         <h1>Track Your Household Expenses with Ease</h1>
         <p className="subheading">
           Simplify your finances with our expense tracker web app
         </p>
         <a href="/signup">
-          <button className="btn-primary">Get Started for Free</button>
+          <Button className="btn-primary">Get Started for Free</Button>
         </a>
       </header>
 
-      <section className="features">
+      <section className={classes.features}>
         <h2>Features</h2>
         <ul>
           <li>Track all your expenses in one place</li>
-          <li>Categorize expenses by type and date</li>
           <li>
             Set budgets and receive alerts when you're close to exceeding them
           </li>
+          <li>Categorize expenses by type and date</li>
           <li>Generate detailed reports and visualizations of your spending</li>
           <li>Sync across all your devices</li>
         </ul>
       </section>
 
-      <section className="how-it-works">
+      <section className={classes.how_it_works}>
         <h2>How it works</h2>
         <ol>
           <li>Sign up for free and create an account</li>
@@ -38,11 +39,11 @@ function HouseholdExpenseTracker() {
           </li>
         </ol>
         <a href="/signup">
-          <button className="btn-primary">Sign up for free</button>
+          <Button className="btn-primary">Sign up for free</Button>
         </a>
       </section>
 
-      <section className="testimonials">
+      <section className={classes.testimonials}>
         <h2>What our customers are saying</h2>
         <div className="quote">
           <p>
@@ -68,11 +69,11 @@ function HouseholdExpenseTracker() {
           <p>- Bob Johnson</p>
         </div>
         <a href="/signup">
-          <button className="btn-primary">Sign up for free</button>
+          <Button className="btn-primary">Sign up for free</Button>
         </a>
       </section>
     </div>
   );
 }
 
-export default HouseholdExpenseTracker;
+export default Home;
