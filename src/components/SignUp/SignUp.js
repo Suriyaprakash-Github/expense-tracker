@@ -104,79 +104,77 @@ const SignUp = () => {
   return (
     <>
       <div className={classes.signup_container}>
-        <div className={classes.form_container}>
-          {!isSignedUp ? <h2>Sign Up</h2> : <h2>Login</h2>}
-          <form onSubmit={submitHandler} className={classes.signup_form_div}>
-            <div className={classes.signup_form_elements}>
-              <label htmlFor="email">Email:</label>
-              <input
-                type="email"
-                id="email"
-                placeholder="Enter your Email"
-                ref={emailEntered}
-                required
-              />
-            </div>
+        {!isSignedUp ? <h2>Sign Up</h2> : <h2>Login</h2>}
+        <form onSubmit={submitHandler} className={classes.signup_form_div}>
+          <div className={classes.signup_form_elements}>
+            <label htmlFor="email">Email:</label>
+            <input
+              type="email"
+              id="email"
+              placeholder="Enter your Email"
+              ref={emailEntered}
+              required
+            />
+          </div>
 
+          <div className={classes.signup_form_elements}>
+            <label htmlFor="password">Password:</label>
+            <input
+              type="password"
+              id="password"
+              placeholder="Enter your Password"
+              ref={passwordEntered}
+              minLength="7"
+              required
+            />
+          </div>
+          {!isSignedUp && (
             <div className={classes.signup_form_elements}>
-              <label htmlFor="password">Password:</label>
+              <label htmlFor="confirm_password">Confirm Password:</label>
               <input
                 type="password"
-                id="password"
-                placeholder="Enter your Password"
-                ref={passwordEntered}
-                minLength="7"
+                id="confirm_password"
+                placeholder="Re-Enter your Password"
+                ref={confirmPasswordEntered}
                 required
               />
             </div>
-            {!isSignedUp && (
-              <div className={classes.signup_form_elements}>
-                <label htmlFor="confirm_password">Confirm Password:</label>
-                <input
-                  type="password"
-                  id="confirm_password"
-                  placeholder="Re-Enter your Password"
-                  ref={confirmPasswordEntered}
-                  required
-                />
-              </div>
-            )}
-            {!isSignedUp ? (
-              <button type="submit" className={classes.inside_button}>
-                Sign Up
-              </button>
-            ) : (
-              <button type="submit" className={classes.inside_button}>
-                Login
-              </button>
-            )}
-          </form>
-          <div className={classes.form_button}>
-            {!isSignedUp && (
+          )}
+          {!isSignedUp ? (
+            <button type="submit" className={classes.inside_button}>
+              Sign Up
+            </button>
+          ) : (
+            <button type="submit" className={classes.inside_button}>
+              Login
+            </button>
+          )}
+        </form>
+        <div className={classes.form_button}>
+          {!isSignedUp && (
+            <button
+              onClick={loginSwitch}
+              className={classes.signup_form_button}
+            >
+              Already Have an Account?
+            </button>
+          )}
+          {isSignedUp && (
+            <>
               <button
                 onClick={loginSwitch}
                 className={classes.signup_form_button}
               >
-                Already Have an Account?
+                First time Here?
               </button>
-            )}
-            {isSignedUp && (
-              <>
-                <button
-                  onClick={loginSwitch}
-                  className={classes.signup_form_button}
-                >
-                  First time Here?
-                </button>
 
-                <a href="/reset">
-                  <button className={classes.signup_form_button}>
-                    Forgot Password?
-                  </button>
-                </a>
-              </>
-            )}
-          </div>
+              <a href="/reset">
+                <button className={classes.signup_form_button}>
+                  Forgot Password?
+                </button>
+              </a>
+            </>
+          )}
         </div>
       </div>
     </>

@@ -1,59 +1,84 @@
-/* 
-#000000
-#14213d
-#fca311
-#e5e5e5
-#ffffff
- */
-
 .signup_container {
-  border: 2px solid #e5e5e5;
-  position: absolute;
-  left: 50%;
-  translate: -50% 35%;
-  border-radius: 0.5rem;
-  padding: 1rem;
-}
-.form_container h2 {
-  font-size: 1.5rem;
+  box-sizing: inherit;
+  box-shadow: 10px 5px 5px rgb(173, 172, 172);
+  border-radius: 0.4rem;
   text-align: center;
-  margin-top: 0;
+  background-color: #3f3e3e;
+  width: fit-content;
+  height: fit-content;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5vh;
+  margin-bottom: 5vh;
 }
-.signup_form_div button {
-  position: relative;
-  left: 50%;
-  translate: -50%;
+
+@media (max-width: 40rem) {
+  .signup_container {
+    width: auto;
+    height: auto;
+  }
 }
-.form_container .form_button {
+
+.signup_container h2 {
+  font-size: 2rem;
+  color: white;
+  margin-top: auto;
+}
+
+.signup_form_div div {
   display: flex;
   justify-content: center;
 }
 
-.form_container .form_button button {
-  margin: 0 0.5rem 0 0.5rem;
+@media (max-width: 30rem) {
+  .signup_form_div div {
+    flex-direction: column;
+  }
 }
 
-.form_container a {
-  text-decoration: none;
-}
-
-.signup_form_div {
-  margin: 2rem;
-}
-
-.signup_form_elements {
-  margin: 1rem;
-  display: flex;
-  justify-content: space-between;
-  font-weight: bold;
-}
-.signup_form_elements label {
+.signup_form_div div label {
   font-size: 1rem;
-}
-.signup_form_elements input {
-  border: 1px solid e5e5e5;
+  color: white;
+  margin: 1rem;
+  padding: 0.25rem;
 }
 
-button:hover {
-  cursor: pointer;
+.signup_form_div div input {
+  font-size: 1rem;
+  margin: 1rem;
+  padding: 0.25rem;
+  border-radius: 0.2rem;
+  border-style: none;
+}
+
+.signup_form_div button {
+  background-color: #07a0e7;
+  color: white;
+  border: none;
+  padding: 1rem;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  margin: 0.5rem;
+}
+
+.signup_form_div button:hover {
+  background-color: #faea06;
+  color: black;
+}
+
+.signup_container button {
+  background-color: #07a0e7;
+  color: white;
+  border: none;
+  padding: 1rem;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  margin: 0.5rem;
+}
+
+.signup_container button:hover {
+  background-color: #faea06;
+  color: black;
 }
