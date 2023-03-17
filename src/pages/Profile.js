@@ -37,7 +37,7 @@ const Profile = () => {
   return (
     <>
       <div className={classes.profile_div}>
-        <h1>Hi, {fetchedName}!!</h1>
+        <h1>Hi!! {fetchedName}, Welcome Again</h1>
         <Link to="/updateprofile">Update Profile</Link>
         <Link to="/verify">Verify Email</Link>
       </div>

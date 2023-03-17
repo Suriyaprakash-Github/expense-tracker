@@ -1,17 +1,19 @@
 import React, { useContext } from "react";
 import ExpenditureContext from "../../../store/ExpenseContext/Expenditure/expenditure-context";
 import classes from "./ExpenditureItem.module.css";
+import { useSelector } from "react-redux";
 
 const ExpenditureItems = () => {
   const expenditureCtx = useContext(ExpenditureContext);
+  const expenditure = useSelector((state) => state.expenditure.expenditures);
 
   let expenditureDetails = "";
-  if (expenditureCtx.expenditures.length === 0) {
+  if (expenditure.length === 0) {
     expenditureDetails = "add expenditures to show";
   } else expenditureDetails = "your expenditure Details";
 
-  console.log(expenditureCtx.expenditures);
-  const expenditures = expenditureCtx.expenditures.map((expenditure) => {
+  console.log(expenditure);
+  const expenditures = expenditure.map((expenditure) => {
     return (
       <div key={Math.random()} className={classes.showIncome}>
         <p>{expenditure.title}</p>

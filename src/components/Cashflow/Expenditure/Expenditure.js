@@ -1,23 +1,33 @@
-import React, { useRef, useContext } from "react";
-import ExpenditureContext from "../../../store/ExpenseContext/Expenditure/expenditure-context";
+import React, { useRef } from "react";
+import { useDispatch } from "react-redux";
+import { expenditureActions } from "../../../store/ExpenseContext/Expenditure/index";
 
 const Expenditure = (props) => {
-  const expenditureCtx = useContext(ExpenditureContext);
+  const dispatch = useDispatch();
   const enteredExpenditure = useRef();
   const enteredExpenditureAmount = useRef();
   const enteredDescription = useRef();
 
   const addExpenditureHandler = (e) => {
     e.preventDefault();
-    expenditureCtx.addExpenditure({
+
+    let exp = {
       id: Math.random(),
       title: enteredExpenditure.current.value,
       expenditure: enteredExpenditureAmount.current.value,
       description: enteredDescription.current.value,
-    });
-    enteredExpenditure.current.value = "";
-    enteredExpenditureAmount.current.value = "";
-    enteredDescription.current.value = "";
+    };
+    console.log(exp);
+    // expenditureCtx.addExpenditure({
+    //   id: Math.random(),
+    //   title: enteredExpenditure.current.value,
+    //   expenditure: enteredExpenditureAmount.current.value,
+    //   description: enteredDescription.current.value,
+    // });
+    // enteredExpenditure.current.value = "";
+    // enteredExpenditureAmount.current.value = "";
+    // enteredDescription.current.value = "";
+    dispatch(expenditureActions.addExpenditure(exp));
   };
 
   return (
