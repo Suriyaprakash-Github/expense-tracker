@@ -35,17 +35,17 @@ const expenditureSlice = createSlice({
     },
 
     removeExpenditures(state, action) {
-      let remainingExp;
+      let allExp;
       const toRemove = state.expenditures.findIndex(
         (expenditure) => expenditure.id === action.payload.id
       );
       state.expenditures.splice(toRemove, 1);
-      remainingExp = [...state.expenditures];
+      allExp = [...state.expenditures];
       axios
         .put(
           "https://expensetracker-1d431-default-rtdb.firebaseio.com/expenditure.json",
           {
-            remainingExp,
+            allExp,
           }
         )
         .catch((error) => {
@@ -54,7 +54,7 @@ const expenditureSlice = createSlice({
     },
 
     editExpenditure(state, action) {
-      state.editExp = action.expenditure;
+      state.editExp = action.payload;
     },
     expenditureStored(state, action) {},
   },

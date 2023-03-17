@@ -31,7 +31,7 @@ const ExpenditureItems = () => {
     console.log(expToEdit);
     if (window.confirm("Are You Sure?")) {
       dispatch(expenditureActions.editExpenditure(exp));
-      // history("/editIncome");
+      history("/editexpenditure");
     }
   };
 
