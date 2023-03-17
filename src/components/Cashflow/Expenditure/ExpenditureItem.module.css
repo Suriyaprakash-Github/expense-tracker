@@ -26,6 +26,13 @@
   flex-wrap: nowrap;
 }
 
+.showIncome img {
+  width: 1.3rem;
+  height: 1.3rem;
+}
+.showIncome img:hover {
+  cursor: pointer;
+}
 .showIncome p {
   margin: 0.3rem;
   text-align: left;

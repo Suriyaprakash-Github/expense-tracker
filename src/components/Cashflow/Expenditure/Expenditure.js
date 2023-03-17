@@ -17,16 +17,7 @@ const Expenditure = (props) => {
       expenditure: enteredExpenditureAmount.current.value,
       description: enteredDescription.current.value,
     };
-    console.log(exp);
-    // expenditureCtx.addExpenditure({
-    //   id: Math.random(),
-    //   title: enteredExpenditure.current.value,
-    //   expenditure: enteredExpenditureAmount.current.value,
-    //   description: enteredDescription.current.value,
-    // });
-    // enteredExpenditure.current.value = "";
-    // enteredExpenditureAmount.current.value = "";
-    // enteredDescription.current.value = "";
+    // console.log(exp);
     dispatch(expenditureActions.addExpenditure(exp));
   };
 
