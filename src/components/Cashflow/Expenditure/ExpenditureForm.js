@@ -51,7 +51,7 @@ const ExpenditureForm = (props) => {
           <div>
             <label htmlFor="expenditureAmount">Expenditure Amount: </label>
             <input
-              type="text"
+              type="number"
               id="expenditureAmount"
               ref={enteredExpenditureAmount}
               required

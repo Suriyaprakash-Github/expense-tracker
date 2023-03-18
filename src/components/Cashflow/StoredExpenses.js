@@ -30,10 +30,9 @@ const StoredExpenses = () => {
       )
       .then((res) => {
         flag = false;
-        res.data.allExp.map((exp) => {
-          // return incomeCtx.incomeStored(income);
-          dispatch(expenditureActions.addExpenditure(exp));
-        });
+        res.data.allExp.map((exp) =>
+          dispatch(expenditureActions.addExpenditure(exp))
+        );
       });
   }
 

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import ExpenditureForm from "../../components/Cashflow/Expenditure/ExpenditureForm";
 import ExpenditureItems from "../../components/Cashflow/Expenditure/ExpenditureItems";
 import IncomeForm from "../../components/Cashflow/Income/IncomeForm";
@@ -18,13 +19,11 @@ const MyExpense = () => {
       <div>
         <div className={classes.dashboard}>
           <div className={classes.sideBar}>
-            <ul>
-              <li>Summary</li>
-              <li>Incomes</li>
-              <li>Expenditures</li>
-              <li>Calender</li>
-              <li>Feedbackfdcgjhmkl,;.</li>
-            </ul>
+            <Link>Summary</Link>
+            <Link to="/incomes">Incomes</Link>
+            <Link>Expenditures</Link>
+            <Link>Calender</Link>
+            <Link>Feedbackfdcgjhmkl,;.</Link>
           </div>
           <div className={classes.dashboard_content}>
             <div className={classes.sideBar}>

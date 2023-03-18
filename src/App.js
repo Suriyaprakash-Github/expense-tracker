@@ -16,6 +16,7 @@ import MyExpense from "./pages/MyExpense/MyExpense";
 import StoredExpenses from "./components/Cashflow/StoredExpenses";
 import EditIncome from "./components/Cashflow/Income/EditIncome";
 import EditExpenditure from "./components/Cashflow/Expenditure/EditExpenditure";
+import AllIncomes from "./pages/Incomes/AllIncomes";
 
 function App() {
   const authCtx = useContext(LoginContext);
@@ -38,6 +39,8 @@ function App() {
 
           <Route path="/myexpense" exact element={<MyExpense />} />
           <Route path="/verify" exact element={<Verify />} />
+          <Route path="/incomes" exact element={<AllIncomes />} />
+
           <Route path="/reset" exact element={<PasswordReset />} />
 
           <Route path="/" exact element={<Home />} />

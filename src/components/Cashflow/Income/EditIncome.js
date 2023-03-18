@@ -41,7 +41,7 @@ const EditIncome = (props) => {
 
         <label htmlFor="incomeAmount">Income Amount: </label>
         <input
-          type="text"
+          type="number"
           id="incomeAmount"
           defaultValue={incomeAmount}
           ref={enteredIncomeAmount}
