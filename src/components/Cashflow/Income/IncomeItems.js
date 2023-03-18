@@ -32,7 +32,6 @@ const IncomeItems = (props) => {
     <>
       <div className={classes.mainIncomeDiv}>
         <h2>{incomeDetails}</h2>
-
         <table>
           <thead>
             <tr>

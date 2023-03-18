@@ -1,10 +1,9 @@
 import React from "react";
-import classes from "./AllIncomes.module.css";
-
-import IncomeItems from "../../components/Cashflow/Income/IncomeItems";
+import classes from "./AllExpenditures.module.css";
 import SideBar from "../../components/Layout/SideBar/SideBar";
+import ExpenditureItems from "../../components/Cashflow/Expenditure/ExpenditureItems";
 
-const AllIncomes = () => {
+const AllExpenditures = () => {
   // to filter expenses
   // const indexNeeded = expenditureCtx.expenditures.filter((exp) => {
   //   return exp.title === "Savings";
@@ -21,11 +20,11 @@ const AllIncomes = () => {
           <div className={classes.sideBar}>
             <SideBar />
           </div>
-          <IncomeItems />
+          <ExpenditureItems />
         </div>
       </div>
     </>
   );
 };
 
-export default AllIncomes;
+export default AllExpenditures;

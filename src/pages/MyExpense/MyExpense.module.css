@@ -47,6 +47,7 @@
 @media (max-width: 40rem) {
   .dashboard_content .sideBar {
     display: flex;
+    flex-direction: column;
   }
 }
 

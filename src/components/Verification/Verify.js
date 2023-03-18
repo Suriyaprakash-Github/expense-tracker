@@ -6,9 +6,7 @@ const Verify = () => {
   const authCtx = useContext(LoginContext);
   const [verified, setVerified] = useState(false);
 
-  //   if (authCtx.verified) {
-  //     setVerified(true);
-  //   }
+  console.log("verified:", verified);
 
   useEffect(() => {
     fetch(
@@ -36,7 +34,7 @@ const Verify = () => {
       })
       .then((data) => {
         setVerified((authCtx.verified = data.users[0].emailVerified));
-        console.log("Email Verification", data.users[0].emailVerified);
+        // console.log("Email Verification", data.users[0].emailVerified);
       });
   });
 

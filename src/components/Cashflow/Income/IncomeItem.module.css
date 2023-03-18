@@ -13,6 +13,7 @@
   top: 0;
   margin-left: auto;
   margin-right: auto;
+  /* word-break: break-all; */
 }
 
 .mainIncomeDiv thead th {

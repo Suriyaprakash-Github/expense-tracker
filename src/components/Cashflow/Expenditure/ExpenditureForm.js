@@ -20,6 +20,9 @@ const ExpenditureForm = (props) => {
     };
     // console.log(exp);
     dispatch(expenditureActions.addExpenditure(exp));
+    enteredExpenditure.current.value = "";
+    enteredExpenditureAmount.current.value = "";
+    enteredDescription.current.value = "";
   };
 
   return (

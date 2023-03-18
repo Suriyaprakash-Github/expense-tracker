@@ -12,9 +12,9 @@ const ExpenditureItems = () => {
   const history = useNavigate();
 
   const expenditure = useSelector((state) => state.expenditure.expenditures);
-  const totalExpenditure = useSelector(
-    (state) => state.expenditure.totalExpenditure
-  );
+  // const totalExpenditure = useSelector(
+  //   (state) => state.expenditure.totalExpenditure
+  // );
   let expenditureDetails = "";
   if (expenditure.length === 0) {
     expenditureDetails = "add expenditures to show";
@@ -35,33 +35,49 @@ const ExpenditureItems = () => {
     }
   };
 
-  const expenditures = expenditure.map((expenditure) => {
-    return (
-      <div key={Math.random()} className={classes.showIncome}>
-        <p>
-          {expenditure.title}
-          <img
-            src={trashImage}
-            onClick={() => deleteHandler(expenditure)}
-            alt="delete"
-          />
-          <img
-            src={editImage}
-            onClick={() => editHandler(expenditure)}
-            alt="delete"
-          />
-        </p>
-        <p>Amount: {expenditure.expenditure}</p>
-        <p>Description:{expenditure.description}</p>
-      </div>
-    );
-  });
   return (
     <>
       <div className={classes.mainIncomeDiv}>
         <h2>{expenditureDetails}</h2>
-        {expenditures}
-        <p> Total Expenditure: {totalExpenditure}</p>
+        <table>
+          <thead>
+            <tr>
+              <th>Expenditure</th>
+              <th>Description</th>
+              <th>Amount</th>
+              <th>Delete</th>
+              <th>Edit</th>
+            </tr>
+          </thead>
+          <tbody>
+            {expenditure.map((expenditure) => {
+              return (
+                <>
+                  <tr>
+                    <td> {expenditure.title}</td>
+                    <td>{expenditure.description}</td>
+                    <td> {expenditure.expenditure}</td>
+
+                    <td>
+                      <img
+                        src={trashImage}
+                        onClick={() => deleteHandler(expenditure)}
+                        alt="delete"
+                      />
+                    </td>
+                    <td>
+                      <img
+                        src={editImage}
+                        onClick={() => editHandler(expenditure)}
+                        alt="delete"
+                      />
+                    </td>
+                  </tr>
+                </>
+              );
+            })}
+          </tbody>
+        </table>
       </div>
     </>
   );
