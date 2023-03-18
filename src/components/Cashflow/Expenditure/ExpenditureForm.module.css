@@ -1,59 +1,67 @@
-.signup_container {
+.incomeForm_div {
   box-sizing: inherit;
-  box-shadow: 10px 5px 5px rgb(173, 172, 172);
+  /* box-shadow: 10px 5px 5px rgb(173, 172, 172); */
   border-radius: 0.4rem;
   text-align: center;
   background-color: #3f3e3e;
   width: fit-content;
   height: fit-content;
-  left: 0;
-  right: 0;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 5vh;
-  margin-bottom: 5vh;
+  /* left: 0;
+  right: 0; */
+  /* margin-left: auto; */
+  /* margin-right: auto; */
+  padding: 1rem;
 }
 
-@media (max-width: 40rem) {
-  .signup_container {
+@media (max-width: 30rem) {
+  .incomeForm_div {
     width: auto;
     height: auto;
   }
 }
 
-.signup_container h2 {
+.incomeForm_div h1 {
   font-size: 2rem;
   color: white;
   margin-top: auto;
 }
 
-.signup_form_div div {
+.incomeForm_div form div {
   display: flex;
   justify-content: space-between;
+  padding: 0;
+  margin: 0;
+  align-items: center;
 }
 
 @media (max-width: 30rem) {
-  .signup_form_div div {
+  .incomeForm_div form div {
     flex-direction: column;
   }
 }
-
-.signup_form_div div label {
+.incomeForm_div form label {
   font-size: 1rem;
   color: white;
-  margin: 0.5rem;
+  margin: 1rem;
   padding: 0.25rem;
 }
 
-.signup_form_div div input {
+.incomeForm_div form select {
   font-size: 1rem;
-  margin: 0.5rem;
+  margin: 0.5rem 0.5rem 0.5rem 0;
+  padding: 0.25rem;
+  border-radius: 0.2rem;
+  border-style: none;
+}
+.incomeForm_div form input {
+  font-size: 1rem;
+  margin: 0.5rem 0.5rem 0.5rem 0;
   padding: 0.25rem;
   border-radius: 0.2rem;
   border-style: none;
 }
 
-.signup_form_div button {
+.incomeForm_div form button {
   background-color: #07a0e7;
   color: white;
   border: none;
@@ -63,22 +71,7 @@
   margin: 0.5rem;
 }
 
-.signup_form_div button:hover {
-  background-color: #faea06;
-  color: black;
-}
-
-.signup_container button {
-  background-color: #07a0e7;
-  color: white;
-  border: none;
-  padding: 1rem;
-  font-size: 1rem;
-  border-radius: 0.5rem;
-  margin: 0.5rem;
-}
-
-.signup_container button:hover {
+.incomeForm_div form button:hover {
   background-color: #faea06;
   color: black;
 }

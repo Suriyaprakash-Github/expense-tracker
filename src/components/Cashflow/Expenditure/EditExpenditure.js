@@ -72,7 +72,7 @@ const EditExpenditure = (props) => {
           defaultValue={expenditureDescription}
           ref={enteredDescription}
         />
-        <button type="submit"> Add Income </button>
+        <button type="submit"> Add Expenditure </button>
       </form>
     </>
   );

@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import classes from "./Profile.module.css";
-import LoginContext from "../store/LoginContext/login-context";
+import LoginContext from "../../store/LoginContext/login-context";
 
 const Profile = () => {
   const [fetchedName, setFetchedName] = useState("");

@@ -36,10 +36,11 @@ Expense form button: #E74C3C */
 
 .app {
   box-sizing: border-box;
-  box-shadow: 10px 5px 5px rgb(173, 172, 172);
+  box-shadow: 10px 5px 5px rgb(153, 153, 153);
   font-size: 62.5%;
   margin: 4rem;
-  background-color: #ffffff;
+  /* background-color: #ffffff; */
+  background-color: #c0bebe5e;
   padding: 0.5rem;
   min-height: 80vh;
 }
