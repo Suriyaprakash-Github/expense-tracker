@@ -28,34 +28,50 @@ const IncomeItems = (props) => {
     }
   };
 
-  const incomes = incomeCtx.incomes.map((income) => {
-    return (
-      <div key={Math.random()} className={classes.showIncome}>
-        <p>
-          {income.title}
-          <img
-            src={trashImage}
-            onClick={() => deleteHandler(income)}
-            alt="delete"
-          />
-          <img
-            src={editImage}
-            onClick={() => editHandler(income)}
-            alt="delete"
-          />
-        </p>
-
-        <p>Amount: {income.income}</p>
-        <p>Description:{income.description}</p>
-      </div>
-    );
-  });
   return (
     <>
       <div className={classes.mainIncomeDiv}>
         <h2>{incomeDetails}</h2>
-        {incomes}
-        <p>Total Income: Rs. {incomeCtx.totalIncome}</p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Income</th>
+              <th>Description</th>
+              <th>Amount</th>
+              <th>Delete</th>
+              <th>Edit</th>
+            </tr>
+          </thead>
+          <tbody>
+            {incomeCtx.incomes.map((income) => {
+              return (
+                <>
+                  <tr>
+                    <td> {income.title}</td>
+                    <td>{income.description}</td>
+                    <td> {income.income}</td>
+
+                    <td>
+                      <img
+                        src={trashImage}
+                        onClick={() => deleteHandler(income)}
+                        alt="delete"
+                      />
+                    </td>
+                    <td>
+                      <img
+                        src={editImage}
+                        onClick={() => editHandler(income)}
+                        alt="delete"
+                      />
+                    </td>
+                  </tr>
+                </>
+              );
+            })}
+          </tbody>
+        </table>
       </div>
     </>
   );

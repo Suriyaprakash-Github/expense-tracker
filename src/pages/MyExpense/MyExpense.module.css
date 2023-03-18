@@ -61,14 +61,3 @@
     flex-direction: column;
   }
 }
-
-.expInc_container {
-  display: flex;
-  justify-content: space-around;
-}
-
-@media (max-width: 60rem) {
-  .expInc_container {
-    flex-direction: column;
-  }
-}

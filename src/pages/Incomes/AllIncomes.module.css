@@ -1,0 +1,51 @@
+.dashboard {
+  display: grid;
+}
+
+@media (max-width: 40rem) {
+  .dashboard {
+    display: flex;
+  }
+}
+
+.sideBar {
+  background: rgb(1, 77, 121);
+  padding: 1rem 0;
+  transition: all 0.5s ease;
+}
+
+.sideBar a {
+  display: block;
+  font-size: 1rem;
+  text-decoration: none;
+  padding: 1rem;
+  color: white;
+  list-style: none;
+}
+.sideBar a:hover {
+  background-color: #faea06;
+  color: black;
+  cursor: pointer;
+}
+
+@media (max-width: 40rem) {
+  .sideBar {
+    flex-direction: row;
+    color: white;
+    display: none;
+  }
+}
+
+.dashboard_content {
+  grid-column: 3/12 span;
+}
+
+.dashboard_content .sideBar {
+  display: none;
+}
+
+@media (max-width: 40rem) {
+  .dashboard_content .sideBar {
+    display: flex;
+  }
+}
