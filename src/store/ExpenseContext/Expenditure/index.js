@@ -41,6 +41,8 @@ const expenditureSlice = createSlice({
       );
       state.expenditures.splice(toRemove, 1);
       allExp = [...state.expenditures];
+      state.totalExpenditure =
+        state.totalExpenditure - Number(action.payload.expenditure);
       axios
         .put(
           `https://expensetracker-1d431-default-rtdb.firebaseio.com/${action.payload.email}/expenditure.json`,

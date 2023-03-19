@@ -34,11 +34,12 @@
 }
 
 .mainIncomeDiv tbody tr:hover {
-  background-color: rgb(218, 235, 250);
+  background-color: rgb(111, 112, 112);
+  color: white;
+  transform: translate(0.2rem);
+  box-shadow: 5px 3px 3px rgb(180, 180, 180);
 }
 
 .mainIncomeDiv table tbody img:hover {
-  /* background-color: #faea06;
-  color: black; */
   cursor: pointer;
 }

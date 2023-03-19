@@ -41,6 +41,12 @@ const Profile = () => {
     setSubs(!subs);
   };
 
+  const themeHandler = () => {
+    // var element = document.body;
+    const element = document.querySelector(":root");
+    element.classList.toggle("dark-mode");
+  };
+
   return (
     <>
       <div className={classes.profile_div}>
@@ -53,7 +59,7 @@ const Profile = () => {
           <button onClick={premiumHandler}> Activate Premium </button>
         )}
 
-        {subs && <button>Toggle Theme</button>}
+        {subs && <button onClick={themeHandler}>Toggle Theme</button>}
       </div>
     </>
   );

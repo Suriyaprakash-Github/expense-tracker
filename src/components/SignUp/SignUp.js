@@ -54,7 +54,7 @@ const SignUp = () => {
           })
           .then((data) => {
             authCtx.login(data.idToken, data.email);
-            redirect("/welcome");
+            redirect("/profile");
           });
 
         emailEntered.current.value = "";

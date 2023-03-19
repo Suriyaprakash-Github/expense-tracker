@@ -4,14 +4,16 @@ import IncomeForm from "../../components/Cashflow/Income/IncomeForm";
 import SideBar from "../../components/Layout/SideBar/SideBar";
 import classes from "./MyExpense.module.css";
 import IncomeContext from "../../store/ExpenseContext/Income/income-context";
-import expenditureStore from "../../store/ExpenseContext/Expenditure";
 import StoredExpenses from "../../components/Cashflow/StoredExpenses";
+import { useSelector } from "react-redux";
 
 const MyExpense = () => {
   const incomeCtx = useContext(IncomeContext);
   const totalIncome = incomeCtx.totalIncome;
-  const totalExpenditure =
-    expenditureStore.getState().expenditure.totalExpenditure;
+  const totalExpenditure = useSelector(
+    (state) => state.expenditure.totalExpenditure
+  );
+
   return (
     <>
       <div>
