@@ -1,9 +1,11 @@
 import React, { useRef, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import IncomeContext from "../../../store/ExpenseContext/Income/income-context";
+import LoginContext from "../../../store/LoginContext/login-context";
 
 const EditIncome = (props) => {
   const incomeCtx = useContext(IncomeContext);
+  const authCtx = useContext(LoginContext);
   const history = useNavigate();
 
   const incomeName = incomeCtx.editArray.title;
@@ -18,6 +20,7 @@ const EditIncome = (props) => {
     e.preventDefault();
     incomeCtx.addIncome({
       id: Math.random(),
+      email: authCtx.email.replace(".", "").replace("@", ""),
       title: enteredIncome.current.value,
       income: enteredIncomeAmount.current.value,
       description: enteredDescription.current.value,

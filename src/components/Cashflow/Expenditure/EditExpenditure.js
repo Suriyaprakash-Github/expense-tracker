@@ -1,9 +1,11 @@
-import React, { useRef } from "react";
+import React, { useContext, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { expenditureActions } from "../../../store/ExpenseContext/Expenditure/index";
+import LoginContext from "../../../store/LoginContext/login-context";
 
 const EditExpenditure = (props) => {
+  const authCtx = useContext(LoginContext);
   const dispatch = useDispatch();
   const history = useNavigate();
 
@@ -22,6 +24,7 @@ const EditExpenditure = (props) => {
     e.preventDefault();
     let exp = {
       id: Math.random(),
+      email: authCtx.email.replace(".", "").replace("@", ""),
       title: enteredExpenditure.current.value,
       expenditure: enteredExpenditureAmount.current.value,
       description: enteredDescription.current.value,

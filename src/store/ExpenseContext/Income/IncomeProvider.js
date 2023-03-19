@@ -10,47 +10,47 @@ const defaultIncomeState = {
 
 const incomeReducer = (state, action) => {
   if (action.type === "ADD") {
-    let updatedIncomes;
+    let allIncomes;
     let updatedTotalIncome;
-    updatedIncomes = state.incomes.concat(action.income);
+    allIncomes = state.incomes.concat(action.income);
     updatedTotalIncome = state.totalIncome + Number(action.income.income);
 
     axios
       .put(
-        "https://expensetracker-1d431-default-rtdb.firebaseio.com/income.json",
+        `https://expensetracker-1d431-default-rtdb.firebaseio.com/${action.income.email}/income.json`,
         {
-          updatedIncomes,
+          allIncomes,
         }
       )
       .then((res) => {
         console.log(res);
-        console.log(res.data.updatedIncomes);
+        console.log(res.data.allIncomes);
       })
       .catch((error) => {
         console.log(error);
       });
 
     return {
-      incomes: updatedIncomes,
+      incomes: allIncomes,
       totalIncome: updatedTotalIncome,
       editIncome: state.editIncome,
     };
   }
   if (action.type === "REMOVE") {
-    let updatedIncomes;
+    let allIncomes;
     let updatedTotalIncome;
     const toRemove = state.incomes.findIndex(
       (income) => income.id === action.income.id
     );
     state.incomes.splice(toRemove, 1);
-    updatedIncomes = [...state.incomes];
+    allIncomes = [...state.incomes];
     updatedTotalIncome = state.totalIncome - Number(action.income.income);
 
     axios
       .put(
-        "https://expensetracker-1d431-default-rtdb.firebaseio.com/income.json",
+        `https://expensetracker-1d431-default-rtdb.firebaseio.com/${action.income.email}/income.json`,
         {
-          updatedIncomes,
+          allIncomes,
         }
       )
       .catch((error) => {
@@ -58,21 +58,21 @@ const incomeReducer = (state, action) => {
       });
 
     return {
-      incomes: updatedIncomes,
+      incomes: allIncomes,
       totalIncome: updatedTotalIncome,
       editIncome: state.editIncome,
     };
   }
 
   if (action.type === "RECEIVED") {
-    let updatedIncomes;
+    let allIncomes;
     let updatedTotalIncome;
     // console.log(action.income);
-    updatedIncomes = state.incomes.concat(action.income);
+    allIncomes = state.incomes.concat(action.income);
     updatedTotalIncome = state.totalIncome + Number(action.income.income);
 
     return {
-      incomes: updatedIncomes,
+      incomes: allIncomes,
       totalIncome: updatedTotalIncome,
       editIncome: state.editIncome,
     };

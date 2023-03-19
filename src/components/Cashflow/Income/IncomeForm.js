@@ -1,8 +1,10 @@
 import React, { useContext, useRef } from "react";
 import IncomeContext from "../../../store/ExpenseContext/Income/income-context";
+import LoginContext from "../../../store/LoginContext/login-context";
 import classes from "./IncomeForm.module.css";
 
 const IncomeForm = (props) => {
+  const authCtx = useContext(LoginContext);
   const incomeCtx = useContext(IncomeContext);
   const enteredIncome = useRef();
   const enteredIncomeAmount = useRef();
@@ -12,6 +14,7 @@ const IncomeForm = (props) => {
     e.preventDefault();
     incomeCtx.addIncome({
       id: Math.random(),
+      email: authCtx.email.replace(".", "").replace("@", ""),
       title: enteredIncome.current.value,
       income: enteredIncomeAmount.current.value,
       description: enteredDescription.current.value,

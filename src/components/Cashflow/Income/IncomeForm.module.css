@@ -1,6 +1,5 @@
 .incomeForm_div {
   box-sizing: inherit;
-  /* box-shadow: 10px 5px 5px rgb(173, 172, 172); */
   border-radius: 0.4rem;
   text-align: center;
   background-color: #3f3e3e;
@@ -8,8 +7,7 @@
   height: fit-content;
   left: 0;
   right: 0;
-  /* margin-left: auto; */
-  /* margin-right: auto; */
+
   padding: 1rem;
 }
 

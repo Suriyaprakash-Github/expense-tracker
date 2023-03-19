@@ -1,9 +1,11 @@
-import React, { useRef } from "react";
+import React, { useRef, useContext } from "react";
 import classes from "./ExpenditureForm.module.css";
 import { useDispatch } from "react-redux";
 import { expenditureActions } from "../../../store/ExpenseContext/Expenditure/index";
+import LoginContext from "../../../store/LoginContext/login-context";
 
 const ExpenditureForm = (props) => {
+  const authCtx = useContext(LoginContext);
   const dispatch = useDispatch();
   const enteredExpenditure = useRef();
   const enteredExpenditureAmount = useRef();
@@ -14,6 +16,7 @@ const ExpenditureForm = (props) => {
 
     let exp = {
       id: Math.random(),
+      email: authCtx.email.replace(".", "").replace("@", ""),
       title: enteredExpenditure.current.value,
       expenditure: enteredExpenditureAmount.current.value,
       description: enteredDescription.current.value,

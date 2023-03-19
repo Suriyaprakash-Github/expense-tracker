@@ -8,7 +8,7 @@ const SideBar = () => {
       <Link to="/incomes">Incomes</Link>
       <Link to="/expenditures">Expenditures</Link>
       <Link to="">Calender</Link>
-      <Link to="">Feedbackfdcgjhmkl,;.</Link>
+      <Link to="">Feedback</Link>
     </>
   );
 };

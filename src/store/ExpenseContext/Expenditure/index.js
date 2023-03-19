@@ -20,7 +20,7 @@ const expenditureSlice = createSlice({
 
       axios
         .put(
-          "https://expensetracker-1d431-default-rtdb.firebaseio.com/expenditure.json",
+          `https://expensetracker-1d431-default-rtdb.firebaseio.com/${action.payload.email}/expenditure.json`,
           {
             allExp,
           }
@@ -43,7 +43,7 @@ const expenditureSlice = createSlice({
       allExp = [...state.expenditures];
       axios
         .put(
-          "https://expensetracker-1d431-default-rtdb.firebaseio.com/expenditure.json",
+          `https://expensetracker-1d431-default-rtdb.firebaseio.com/${action.payload.email}/expenditure.json`,
           {
             allExp,
           }
