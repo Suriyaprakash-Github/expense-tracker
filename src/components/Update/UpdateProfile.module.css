@@ -19,11 +19,11 @@
   font-size: 1rem;
 }
 .signup_form_button {
-  background-color: #14213d;
+  /* background-color: #14213d; */
   border: none;
   padding: 1rem;
   border-radius: 0.5rem;
-  color: #fca311;
+  /* color: #fca311; */
   position: relative;
   left: 50%;
   transform: translate(-50%);

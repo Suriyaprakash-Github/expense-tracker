@@ -37,7 +37,7 @@
     flex-direction: column;
   }
 }
-.incomeForm_div form label {
+/* .incomeForm_div form label {
   font-size: 1rem;
   color: white;
   margin: 1rem;
@@ -50,19 +50,4 @@
   padding: 0.25rem;
   border-radius: 0.2rem;
   border-style: none;
-}
-
-.incomeForm_div form button {
-  background-color: #07a0e7;
-  color: white;
-  border: none;
-  padding: 1rem;
-  font-size: 1rem;
-  border-radius: 0.5rem;
-  margin: 0.5rem;
-}
-
-.incomeForm_div form button:hover {
-  background-color: #faea06;
-  color: black;
-}
+} */

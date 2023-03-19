@@ -7,6 +7,8 @@ const Profile = () => {
   const [fetchedName, setFetchedName] = useState("");
   const authCtx = useContext(LoginContext);
 
+  const [subs, setSubs] = useState(authCtx.subscribed);
+
   fetch(
     "https://identitytoolkit.googleapis.com/v1/accounts:lookup?key=AIzaSyC415gt6s-Bwh87A8Renvlz03AmmWUJqrw",
     {
@@ -34,12 +36,24 @@ const Profile = () => {
       setFetchedName(data.users[0].displayName);
     });
 
+  const premiumHandler = () => {
+    authCtx.premium(!subs);
+    setSubs(!subs);
+  };
+
   return (
     <>
       <div className={classes.profile_div}>
         <h1>Hi!! {fetchedName}, Welcome Again</h1>
         <Link to="/updateprofile">Update Profile</Link>
         <Link to="/verify">Verify Email</Link>
+        {subs ? (
+          <button>Premium</button>
+        ) : (
+          <button onClick={premiumHandler}> Activate Premium </button>
+        )}
+
+        {subs && <button>Toggle Theme</button>}
       </div>
     </>
   );

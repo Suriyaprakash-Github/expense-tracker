@@ -5,8 +5,10 @@ const LoginContext = React.createContext({
   isLoggedIn: false,
   email: "",
   verified: false,
+  subscribed: false,
   login: (token) => {},
   logout: () => {},
+  premium: () => {},
 });
 
 export default LoginContext;

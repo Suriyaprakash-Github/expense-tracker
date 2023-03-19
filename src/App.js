@@ -13,7 +13,6 @@ import PasswordReset from "./components/PasswordReset/PasswordReset";
 import Verify from "./components/Verification/Verify";
 import NavBar from "./components/Layout/Header/NavBar";
 import MyExpense from "./pages/MyExpense/MyExpense";
-import StoredExpenses from "./components/Cashflow/StoredExpenses";
 import EditIncome from "./components/Cashflow/Income/EditIncome";
 import EditExpenditure from "./components/Cashflow/Expenditure/EditExpenditure";
 import AllIncomes from "./pages/Incomes/AllIncomes";
@@ -48,7 +47,6 @@ function App() {
           <Route path="/" exact element={<Home />} />
         </Routes>
       </div>
-      <StoredExpenses />
     </>
   );
 }

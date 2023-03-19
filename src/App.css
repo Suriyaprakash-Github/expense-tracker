@@ -1,45 +1,8 @@
-/* Whole body background: #141414
-Body: #FFFFFF
-Navigation bar (main): #212121
-Navigation bar (Add Income page): #262626
-Navigation bar (Add Expense page): #1E1E1E
-Expense table header: #2C3E50
-Expense table row (alternating colors): #1E1E1E, #212121
-Income form background: #2C2C2C
-Income form button: #4CAF50
-Expense form background: #2C2C2C
-Expense form button: #FF4D4D */
-
-/* Whole body background: #F5F5F5
-Body: #FFFFFF
-Navigation bar (main): #0066CC
-Navigation bar (Add Income page): #00CC66
-Navigation bar (Add Expense page): #FF6666
-Expense table header: #2C3E50
-Expense table row (alternating colors): #FFFFFF, #F2F2F2
-Income form background: #D5F5E3
-Income form button: #00B050
-Expense form background: #F7D9D9
-Expense form button: #FF4D4D */
-
-/* Whole body background: #F4F4F4
-Body: #FFFFFF
-Navigation bar (main): #4A4A4A
-Navigation bar (Add Income page): #27AE60
-Navigation bar (Add Expense page): #C0392B
-Expense table header: #3F74C9
-Expense table row (alternating colors): #FFFFFF, #F2F8FD
-Income form background: #E8F6EF
-Income form button: #2ECC71
-Expense form background: #F5B7B1
-Expense form button: #E74C3C */
-
 .app {
   box-sizing: border-box;
   box-shadow: 10px 5px 5px rgb(153, 153, 153);
   font-size: 62.5%;
   margin: 4rem;
-  /* background-color: #ffffff; */
   background-color: #c0bebe5e;
   padding: 0.5rem;
   min-height: 80vh;

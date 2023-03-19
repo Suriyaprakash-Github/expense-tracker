@@ -5,6 +5,7 @@ import SideBar from "../../components/Layout/SideBar/SideBar";
 import classes from "./MyExpense.module.css";
 import IncomeContext from "../../store/ExpenseContext/Income/income-context";
 import expenditureStore from "../../store/ExpenseContext/Expenditure";
+import StoredExpenses from "../../components/Cashflow/StoredExpenses";
 
 const MyExpense = () => {
   const incomeCtx = useContext(IncomeContext);
@@ -37,6 +38,7 @@ const MyExpense = () => {
           </div>
         </div>
       </div>
+      <StoredExpenses />
     </>
   );
 };

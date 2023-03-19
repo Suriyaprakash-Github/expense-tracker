@@ -7,8 +7,12 @@ const LoginProvider = (props) => {
 
   const [token, setToken] = useState(initialToken);
   const [email, setEmail] = useState(initialEmail);
-  // const [verified,setVerified]=useState(false)
+  const [subscribed, setSubscribed] = useState(null);
   const userIsLoggedIn = !!token;
+
+  const premiumHandler = () => {
+    setSubscribed(!null);
+  };
 
   const loginHandler = (token, email) => {
     setToken(token);
@@ -29,8 +33,10 @@ const LoginProvider = (props) => {
     isLoggedIn: userIsLoggedIn,
     email: email,
     verified: false,
+    subscribed: subscribed,
     login: loginHandler,
     logout: logoutHandler,
+    premium: premiumHandler,
   };
 
   return (
