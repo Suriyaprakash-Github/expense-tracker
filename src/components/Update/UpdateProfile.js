@@ -41,7 +41,7 @@ const UpdateProfile = () => {
       .then((data) => {
         const updateName = data.displayName;
         console.log(`Fullname has been Updated to ${updateName}`);
-        redirect("/welcome");
+        redirect("/myexpense");
       });
   };
   // getting user details:
@@ -75,25 +75,27 @@ const UpdateProfile = () => {
   console.log(authCtx.verified);
   return (
     <>
-      <h1>Update Your Profile </h1>
-      <div className={classes.signup_main_div}>
-        <form onSubmit={updateHandler} className={classes.signup_form_div}>
-          <div className={classes.signup_form_elements}>
-            <label className={classes.signup_form_label} htmlFor="fullname">
-              Fullname:
-            </label>
-            <input
-              type="text"
-              id="fullname"
-              placeholder={fetchedName}
-              ref={fullnameEntered}
-              required
-            />
-          </div>
-          <button type="submit" className={classes.signup_form_button}>
-            Update Profile
-          </button>
-        </form>
+      <div className={classes.verify_div}>
+        <div className={classes.signup_main_div}>
+          <h1>Update Your Profile </h1>
+          <form onSubmit={updateHandler} className={classes.signup_form_div}>
+            <div className={classes.signup_form_elements}>
+              <label className={classes.signup_form_label} htmlFor="fullname">
+                Fullname:
+              </label>
+              <input
+                type="text"
+                id="fullname"
+                placeholder={fetchedName}
+                ref={fullnameEntered}
+                required
+              />
+            </div>
+            <button type="submit" className={classes.signup_form_button}>
+              Update Profile
+            </button>
+          </form>
+        </div>
       </div>
     </>
   );
