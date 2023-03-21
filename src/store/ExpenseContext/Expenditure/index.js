@@ -25,10 +25,7 @@ const expenditureSlice = createSlice({
             allExp,
           }
         )
-        .then((res) => {
-          console.log(res);
-          console.log(res.data.allExp);
-        })
+        .then((res) => {})
         .catch((error) => {
           console.log(error);
         });

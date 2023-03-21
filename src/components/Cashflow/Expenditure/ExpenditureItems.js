@@ -28,7 +28,6 @@ const ExpenditureItems = () => {
 
   const editHandler = (exp) => {
     let expToEdit = exp;
-    console.log(expToEdit);
     if (window.confirm("Are You Sure?")) {
       dispatch(expenditureActions.editExpenditure(exp));
       history("/editexpenditure");

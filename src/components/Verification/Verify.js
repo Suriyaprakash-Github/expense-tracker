@@ -6,8 +6,6 @@ const Verify = () => {
   const authCtx = useContext(LoginContext);
   const [verified, setVerified] = useState(false);
 
-  console.log("verified:", verified);
-
   useEffect(() => {
     fetch(
       "https://identitytoolkit.googleapis.com/v1/accounts:lookup?key=AIzaSyC415gt6s-Bwh87A8Renvlz03AmmWUJqrw",
@@ -34,12 +32,10 @@ const Verify = () => {
       })
       .then((data) => {
         setVerified((authCtx.verified = data.users[0].emailVerified));
-        // console.log("Email Verification", data.users[0].emailVerified);
       });
   });
 
   const sendVerificationEmail = () => {
-    console.log(authCtx.token);
     fetch(
       "https://identitytoolkit.googleapis.com/v1/accounts:sendOobCode?key=AIzaSyC415gt6s-Bwh87A8Renvlz03AmmWUJqrw",
       {
@@ -54,7 +50,6 @@ const Verify = () => {
       }
     )
       .then((res) => {
-        console.log(res);
         if (res.ok) {
           return res.json();
         } else {
@@ -65,9 +60,7 @@ const Verify = () => {
           });
         }
       })
-      .then((data) => {
-        console.log("requested email", data);
-      });
+      .then((data) => {});
   };
 
   return (

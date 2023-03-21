@@ -10,7 +10,6 @@ const EditExpenditure = (props) => {
   const history = useNavigate();
 
   const expToEdit = useSelector((state) => state.expenditure.editExp);
-  console.log(expToEdit);
 
   const expenditureName = expToEdit.title;
   const expenditureAmount = expToEdit.expenditure;

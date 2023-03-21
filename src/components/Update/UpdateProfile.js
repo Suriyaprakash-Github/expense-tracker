@@ -40,7 +40,6 @@ const UpdateProfile = () => {
       })
       .then((data) => {
         const updateName = data.displayName;
-        console.log(`Fullname has been Updated to ${updateName}`);
         redirect("/myexpense");
       });
   };
@@ -72,7 +71,6 @@ const UpdateProfile = () => {
       setFetchedName(data.users[0].displayName);
     });
 
-  console.log(authCtx.verified);
   return (
     <>
       <div className={classes.verify_div}>

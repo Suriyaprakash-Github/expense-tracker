@@ -21,7 +21,6 @@ const ExpenditureForm = (props) => {
       expenditure: enteredExpenditureAmount.current.value,
       description: enteredDescription.current.value,
     };
-    // console.log(exp);
     dispatch(expenditureActions.addExpenditure(exp));
     enteredExpenditure.current.value = "";
     enteredExpenditureAmount.current.value = "";

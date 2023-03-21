@@ -22,10 +22,7 @@ const incomeReducer = (state, action) => {
           allIncomes,
         }
       )
-      .then((res) => {
-        console.log(res);
-        console.log(res.data.allIncomes);
-      })
+      .then((res) => {})
       .catch((error) => {
         console.log(error);
       });
@@ -67,7 +64,6 @@ const incomeReducer = (state, action) => {
   if (action.type === "RECEIVED") {
     let allIncomes;
     let updatedTotalIncome;
-    // console.log(action.income);
     allIncomes = state.incomes.concat(action.income);
     updatedTotalIncome = state.totalIncome + Number(action.income.income);
 
@@ -80,7 +76,6 @@ const incomeReducer = (state, action) => {
 
   if (action.type === "EDIT") {
     let newEditIncome = action.income;
-    console.log("from provider", newEditIncome);
 
     return {
       incomes: state.incomes,

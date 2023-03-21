@@ -31,9 +31,7 @@ const PasswordResetPage = () => {
           });
         }
       })
-      .then((data) => {
-        console.log(data);
-      });
+      .then((data) => {});
     emailEntered.current.value = "";
   };
   return (
