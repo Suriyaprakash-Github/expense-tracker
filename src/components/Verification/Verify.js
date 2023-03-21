@@ -5,7 +5,7 @@ import classes from "./Verify.module.css";
 const Verify = () => {
   const authCtx = useContext(LoginContext);
   const [verified, setVerified] = useState(false);
-
+  console.log(verified);
   useEffect(() => {
     fetch(
       "https://identitytoolkit.googleapis.com/v1/accounts:lookup?key=AIzaSyC415gt6s-Bwh87A8Renvlz03AmmWUJqrw",

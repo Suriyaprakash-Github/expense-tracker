@@ -39,7 +39,7 @@ const UpdateProfile = () => {
         }
       })
       .then((data) => {
-        const updateName = data.displayName;
+        // const updateName = data.displayName;
         redirect("/myexpense");
       });
   };
