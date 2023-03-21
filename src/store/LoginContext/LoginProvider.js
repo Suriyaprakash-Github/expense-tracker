@@ -7,6 +7,7 @@ const LoginProvider = (props) => {
 
   const [token, setToken] = useState(initialToken);
   const [email, setEmail] = useState(initialEmail);
+  const [localId, setLocalId] = useState("");
   const [subscribed, setSubscribed] = useState(null);
   const userIsLoggedIn = !!token;
 
@@ -14,9 +15,10 @@ const LoginProvider = (props) => {
     setSubscribed(!null);
   };
 
-  const loginHandler = (token, email) => {
+  const loginHandler = (token, email, localId) => {
     setToken(token);
     setEmail(email);
+    setLocalId(localId);
     localStorage.setItem("token", token);
     localStorage.setItem("email", email);
   };
@@ -33,6 +35,7 @@ const LoginProvider = (props) => {
     isLoggedIn: userIsLoggedIn,
     email: email,
     verified: false,
+    localId: localId,
     subscribed: subscribed,
     login: loginHandler,
     logout: logoutHandler,

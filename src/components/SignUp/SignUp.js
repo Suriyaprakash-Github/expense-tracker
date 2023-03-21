@@ -53,7 +53,9 @@ const SignUp = () => {
             }
           })
           .then((data) => {
-            authCtx.login(data.idToken, data.email);
+            authCtx.login(data.idToken, data.email, data.localId);
+            console.log(data.localId);
+
             redirect("/profile");
           });
 
@@ -91,7 +93,8 @@ const SignUp = () => {
           }
         })
         .then((data) => {
-          authCtx.login(data.idToken, data.email);
+          authCtx.login(data.idToken, data.email, data.localId);
+          console.log(data.localId);
           redirect("/profile");
         });
 
