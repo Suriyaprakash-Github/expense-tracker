@@ -2,6 +2,11 @@
   background-image: linear-gradient(to right bottom, #b2ef91, #fca88c);
   background-repeat: no-repeat;
 }
+@media (max-width: 30rem) {
+  :root {
+    margin: 0.5rem;
+  }
+}
 
 body {
   margin: 0;
